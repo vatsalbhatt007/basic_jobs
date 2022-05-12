@@ -7,9 +7,11 @@ pipeline {
             steps {
                 echo 'Hello, world'
                 helloWorld 'Vatsal'
-                script{
-                    envSettings 'env'
                 }
+        }
+        stage ('env') {
+        steps{
+            envSettings 'env'
             }
         }
     }
