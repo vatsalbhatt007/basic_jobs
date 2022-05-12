@@ -1,9 +1,21 @@
 @Library('basic-library')
 
-stage('Demo') {
-
-  echo 'Hello World'
-
-  sayHello 'Vatsal'
-
+pipeline {
+  agent 'any'
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '5'))
+  }
+  stages {
+      stage ('Env') {
+          steps {
+              sh 'env'
+              sayHello 'Vatsal'
+          }
+      }
+  }
+  post {
+    always {
+      cleanWs()
+    }
+  }  
 }
