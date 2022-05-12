@@ -9,7 +9,7 @@ pipeline {
       stage ('Env') {
           steps {
               sh 'env'
-              sayHello 'Vatsal'
+              HelloWorld 'Vatsal'
           }
       }
   }
