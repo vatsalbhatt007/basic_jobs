@@ -7,6 +7,8 @@ pipeline {
             steps {
                 echo 'Hello, world'
                 helloWorld 'Vatsal'
+            }
+            steps {
                 envSettings
             }
         }
