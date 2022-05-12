@@ -1,18 +1,9 @@
-pipeline {
-  agent 'any'
-  options {
-    buildDiscarder(logRotator(numToKeepStr: '5'))
-  }
-  stages {
-      stage ('Env') {
-          steps {
-              sh 'env'    
-          }
-      }
-  }
-  post {
-    always {
-      cleanWs()
-    }
-  }  
+@Library('basic-library')
+
+stage('Demo') {
+
+  echo 'Hello World'
+
+  sayHello 'Vatsal'
+
 }
