@@ -8,7 +8,7 @@ pipeline {
                 echo 'Hello, world'
                 helloWorld 'Vatsal'
                 script{
-                    envSettings
+                    envSettings 'env'
                 }
             }
         }
