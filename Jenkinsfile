@@ -11,7 +11,7 @@ pipeline {
         }
         stage ('env') {
         steps{
-            sh returnStdout: true, script: envSettings 'env'
+            envSettings 'env'
             }
         }
     }
