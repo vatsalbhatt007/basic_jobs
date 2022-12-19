@@ -14,6 +14,11 @@ pipeline {
             envSettings 'env'
             }
         }
+        stage ('oc') {
+            steps {
+                Ops.oc('','login')
+            }            
+        }
     }
     post
     {
