@@ -18,7 +18,7 @@ pipeline {
         stage ('oc') {
             steps {
                 script {
-                    Ops.oc('login')
+                    ops.oc('login')
                 }
             }            
         }
