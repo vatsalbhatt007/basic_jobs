@@ -1,4 +1,5 @@
 @Library('basic-library') _
+def pipelineSettings = null
 
 pipeline {
     agent any
@@ -16,7 +17,9 @@ pipeline {
         }
         stage ('oc') {
             steps {
-                Ops('','login')
+                script {
+                    Ops.oc(pipelineSettings,'login')
+                }
             }            
         }
     }
